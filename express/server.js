@@ -14,13 +14,12 @@ app.use(basicAuth({
 }));
 
 router.get('*', (req, res) => {
-  res.sendFile("index.html", { root: __dirname+"/../build/" });
+  res.sendFile("index.html", { root: __dirname+"/.." });
 });
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 router.post('/', (req, res) => res.json({ postBody: req.body }));
 
-// app.use(express.static(__dirname + "/../build"));
-app.use('/',router);
+app.use('/api',router);
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
