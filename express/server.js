@@ -19,6 +19,9 @@ router.get('*', (req, res) => {
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
+
+app.use(express.static(__dirname + "/../build"));
+
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 router.post('/', (req, res) => res.json({ postBody: req.body }));
 

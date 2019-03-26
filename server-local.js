@@ -8,4 +8,4 @@ const app = require('./express/server');
 // app.get('/', function (req, res) {
 //   res.send('hello world')
 // })
-app.listen(3000, () => console.log('Local app listening on port 3000!'));
+app.listen(4000, () => console.log('Local app listening on port 4000!'));
